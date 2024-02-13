@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <div align="center">
+    <table width="576" height="238" border="1">
+      <tr>
+        <th scope="col">NAME</th>
+        <th scope="col">AGE</th>
+        <th scope="col">GENDER</th>
+        <th scope="col">ADDRESS</th>
+        <th scope="col">PHONE</th>
+        <th scope="col">EMAIL</th>
+        <th scope="col">&nbsp;</th>
+      </tr>
+      {% for i in data %}
+      {% if i.lid.type == 'pending' %}
+      <tr>
+        <td>{{i.fname}}{{i.lname}}</td>
+        <td>{{i.age}}</td>
+        <td>{{i.gender}}</td>
+        <td>{{i.place}} {{i.post}} {{i.pin}}</td>
+        <td>{{i.phone}}</td>
+        <td>{{i.email}}</td>
+        <td><p><a href="{% url 'accept1' id=i.lid.id%}">ACCEPT</a></p>
+        <p><a href="{% url 'reject1' id=i.lid.id %}">REJECT</a></p></td>
+      </tr>
+      {% endif %}
+      {% endfor %}
+      </table>
+  </div>
+</form>
+</body>
+</html>

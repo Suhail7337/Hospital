@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <div align="center">
+    <table width="674" height="263" border="1">
+      <tr>
+        <th scope="col">NAME</th>
+        <th scope="col">AGE</th>
+        <th scope="col">GENDER</th>
+        <th scope="col">PLACE</th>
+        <th scope="col">POST</th>
+        <th scope="col">PIN</th>
+        <th scope="col">PHONE</th>
+        <th scope="col"><p>&nbsp;</p>
+        </th>
+      </tr>
+      {% for i in data %}
+      <tr>
+        <td>{{i.fname}} {{i.lname}}</td>
+        <td>{{i.age}}</td>
+        <td>{{i.gender}}&nbsp;</td>
+        <td>{{i.place}}</td>
+        <td>{{i.post}}&nbsp;</td>
+        <td>{{i.pin}}&nbsp;</td>
+        <td>{{i.phone}}&nbsp;</td>
+        
+        <th scope="col"><p>{% if i.lid.type == 'patient' %}<a href="#">BLOCK</a > {% endif %}</p>
+        <p> {% if i.lid.type == 'blocked' %}<a href="#">UNBLOCK</a></p> {% endif %}</th>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</form>
+</body>
+</html>

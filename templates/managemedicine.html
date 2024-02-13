@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+</form>
+<div align="center">
+  <table width="604" height="216" border="1">
+    <tr>
+      <th scope="col">MEDICINE NAME </th>
+      <th scope="col">USAGE</th>
+      <th scope="col">DISCRIPTION</th>
+      <th scope="col">IMAGE</th>
+      <th scope="col">PRICE</th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+    {% for i in data %}
+    <tr>
+      <td>{{i.medicine2}}&nbsp;</td>
+      <td>{{i.usage}}&nbsp;</td>
+      <td>{{i.discription}}&nbsp;</td>
+      <td>{{i.price}}&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><p><a href="{% url 'editmedicine' id=i.id}">EDIT</a></p>
+      <p><a href="{% url 'deletemedicine' id=i.id %}">DELETE</a></p></td>
+    </tr>
+    {% endfor %}
+  </table>
+  <form id="form2" name="form2" method="post" action="addmedicine">
+    <label>
+      <input type="submit" name="Submit" value="ADD NEW" />
+    </label>
+  </form>
+  <p>&nbsp;</p>
+</div>
+</body>
+</html>

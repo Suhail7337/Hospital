@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/editshedule">
+  <div align="center">
+    <table width="200" border="1">
+      <tr>
+
+        <!-- <th scope="row">DAY</th> -->
+        <!-- <td><label>
+          <select name="select" required>
+            <option value="">select</option>
+            <option value="SUNDAY" {% if data.day == "SUNDAY" %}selected{% endif %}>SUNDAY</option>
+            <option value="MONDAY" {% if data.day == "MONDAY" %}selected{% endif %}>MONDAY</option>
+            <option value="TUESDAY" {% if data.day == "TUESDAY" %}selected{% endif %}>TUESDAY</option>
+            <option value="WEDNESDAY" {% if data.day == "WEDNESDAY" %}selected{% endif %}>WEDNESDAY</option>
+            <option value="THURSDAY" {% if data.day == "thursday" %}selected{% endif %}>THURSDAY</option>
+            <option value="FRIDAY" {% if data.day == "THURSDAY" %}selected{% endif %}>FRIDAY</option>
+            <option value="SATURDAY"{% if data.day == "SATURDAY" %}selected{% endif %}>SATURDAY</option>
+
+          </select>
+        </label></td> -->
+        <tr>
+          <th scope="row">DAY</th>
+          <td><input type="datetime" name="day" value="{{data.day}}" /></td>
+        </tr>
+      </tr>
+      <tr>
+        <th scope="row">FROM-TIME</th>
+        <td><input type="time" name="time1" value="{{data.fromtime}}" /></td>
+      </tr>
+      <tr>
+        <th scope="row">TO TIME </th>
+        <td><input type="time" name="time2" value="{{data.totime}}" /></td>
+      </tr>
+
+      </table>
+    <p>
+      <label>
+      <input type="submit" name="Submit" value="update" />
+      </label>
+    </p>
+  </div>
+</form>
+</body>
+</html>
